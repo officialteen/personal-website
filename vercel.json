@@ -1,0 +1,5 @@
+{
+  "redirects": [
+    { "source": "/love", "destination": "/love.html", "permanent": true }
+  ]
+}
