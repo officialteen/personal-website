@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico:wght@400&display=swap">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+            overflow: hidden;
+        }
+
+        #container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            position: relative;
+            color: #4a4a4a;
+        }
+
+        #loveText {
+            font-size: 36px;
+            color: #ff6b6b;
+            font-family: 'Pacifico', cursive;
+            margin-bottom: 10px;
+        }
+
+        #questionText {
+            font-size: 24px;
+            color: #66a3ff;
+            font-family: 'Pacifico', cursive;
+            margin-bottom: 20px;
+        }
+
+        #yesButton, #noButton {
+            padding: 15px 30px;
+            font-size: 18px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            transition: background-color 0.3s ease, transform 1s ease;
+        }
+
+        #yesButton {
+            background-color: #ff6b6b;
+            color: #fff;
+        }
+
+        #noButton {
+            background-color: #66a3ff;
+            color: #fff;
+        }
+
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            opacity: 0.7;
+            animation: float 3s infinite;
+            transform-origin: 50% 50%;
+            background-color: #ff6b6b;
+            clip-path: polygon(
+                50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%
+            );
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+                opacity: 0.7;
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 0.7;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        <div id="loveText">My Love, Shaden</div>
+        <div id="questionText">Will you be my Valentine?</div>
+        <button id="yesButton" onclick="showYes()">Yes</button>
+        <button id="noButton" onclick="moveNo()">No</button>
+        <!-- Hearts floating in the background -->
+        <div class="heart" style="top: 10%; left: 10%;"></div>
+        <div class="heart" style="top: 20%; left: 80%;"></div>
+        <div class="heart" style="top: 70%; left: 50%;"></div>
+        <div class="heart" style="top: 40%; left: 30%;"></div>
+        <div class="heart" style="top: 60%; left: 70%;"></div>
+        <div class="heart" style="top: 30%; left: 90%;"></div>
+        <div class="heart" style="top: 50%; left: 20%;"></div>
+        <div class="heart" style="top: 80%; left: 60%;"></div>
+        <!-- Add more hearts as needed -->
+    </div>
+
+    <script>
+        function moveNo() {
+            var noButton = document.getElementById("noButton");
+            var container = document.getElementById("container");
+
+            var newX = Math.random() * (container.offsetWidth - noButton.offsetWidth);
+            var newY = Math.random() * (container.offsetHeight - noButton.offsetHeight);
+
+            noButton.style.transform = `translate(${newX}px, ${newY}px)`;
+        }
+
+        function showYes() {
+            alert("Yay! I'm so happy you said yes!");
+        }
+    </script>
+
+</body>
+</html>
