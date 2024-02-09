@@ -1,6 +1,6 @@
 {
   "redirects": [
     { "source": "/love", "destination": "/love.html", "permanent": true },
-    { "source": "/valentine", "destination": "/valentine.html", "permanent": true }
+    { "source": "/fourteenth", "destination": "/valentine.html", "permanent": true }
   ]
 }
